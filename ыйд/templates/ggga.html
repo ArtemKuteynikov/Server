@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+  body { background: url(https://bestcube.space/wp-content/uploads/22-730x456.jpg); }
+  div1{position: absolute; top: 0px; right: 0px;}
+  div2{position: absolute; bottom: 0px; right: 0px;}
+  div1{position: absolute; top: 0px; right: 0px;}
+</style>
+
+    <script>
+$(document).ready(function(){
+function printText(h, j, l, b, m, k) {
+var a = 0;
+$(h).click(function(){
+	    a = a+1;
+		if (a % 2 == 1){
+		$(h).animate({left: l, top: b}, 1000)
+        $(j).animate({left: l, top: b}, 1000)}
+		else if (a % 2 !== 1){
+		$(h).animate({left: m, top: k}, "slow")
+		$(j).animate({left: m, top: k}, "slow")}
+		return false
+		});
+     };
+     printText("#flip","#panel", "+=100", "+=0", "-=100", "-=0");
+     printText("#flip1","#panel1", "+=0", "+=100", "-=0", "-=100");
+     printText("#flip2","#panel2", "-=100", "+=0", "+=100", "-=0");
+});
+</script>
+<style>
+h1{
+color: #fff;
+}
+#flip {
+ position: absolute;
+ top: 50%
+  text-align: center;
+  background-color: #64A8D1;
+  border: solid 1px #000;
+}
+#panel {
+position: absolute;
+top :0%
+  display: none;
+  text-align: center;
+  background-color: #3D9AD1;
+  border: solid 1px #000;
+}
+#flip1 {
+ position: absolute;
+ top: 50%
+  text-align: center;
+  background-color: #64A8D1;
+  border: solid 1px #000;
+}
+#panel1 {
+position: absolute;
+top :0%
+  display: none;
+  text-align: center;
+  background-color: #3D9AD1;
+  border: solid 1px #000;
+}
+#flip2 {
+ position: absolute;
+ top: 50%
+  text-align: center;
+  background-color: #64A8D1;
+  border: solid 1px #000;
+}
+#panel2 {
+position: absolute;
+top :0%
+  display: none;
+  text-align: center;
+  background-color: #3D9AD1;
+  border: solid 1px #000;
+}
+.registerbtn {
+    background-color: #ff0000;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+}
+</style>
+</head>
+<body><!--
+<form action="{{ url_for('Admin') }}">
+  <div class="container signin">
+    <button type="submit" class="registerbtn">Admin</button>
+  </div>
+</form>-->
+<a href="/admin/">  <div class="container signin">
+    <button type="submit" class="registerbtn">Admin</button>
+  </div></a>
+<h1>Привет, {{user}} {{user1}}</h1>
+<div id="flip" style ="opacity: 0.5; left: 0px; top: 50%; height: 100px; width: 50px; display: block;">slide</div>
+<div id="panel" style ="opacity: 0.5; left: -100px; top: 25%; height: 50%; width: 100px; display: block;">Hello {{user}}!</div>
+<div id="flip1" style ="opacity: 0.5; left: 47.5%; top: -2px; height: 50px; width: 100px; display: block;">slide</div>
+<div id="panel1" style ="opacity: 0.5; left: 25%; top: -100px; height: 100px ; width:50%; display: block;">{{user}}
+<form action="{{ url_for('cours') }}">
+  <div class="container signin">
+    <p><button type="submit">Block-Diagrams</button></p>
+  </div>
+</form>
+</div>
+<div id="flip2" style ="opacity: 0.5; right: 0px; top: 50%; height: 100px; width: 50px; display: block;">Profile</div>
+<div id="panel2" style ="opacity: 0.5; right: -100px; top: 25%; height: 50%; width: 100px; display: block;">Hello {{user}}!
+      <form action="{{ url_for('Show_info') }}">
+  <div class="container signin">
+    <p><button type="submit">Profile</button></p>
+  </div>
+</form>
+          <form action="{{ url_for('Ch_pass1') }}">
+  <div class="container signin">
+    <p><button type="submit">Change password</button></p>
+  </div>
+</form>
+    <form action="{{ url_for('ConTS') }}">
+  <div class="container signin">
+    <p><button type="submit">Chat</button></p>
+  </div>
+</form>
+    <form action="{{ url_for('main') }}">
+  <div class="container signin">
+    <p><button type="submit">Lod Out</button></p>
+  </div>
+</form>
+
+</div>
+<!--<A href="https://devionity.com/ru/courses/css-fundamentals/real-example-creating-a-simple-registration-form-with-html-and-css">
+<IMG height=45 alt="Фото которое меня окружает"
+            src="https://adriano-sochi.ru/images/menu/menu.png" width=200 align=left border=0></A></div1>
+<div2><A href="http://www.html.by/threads/3946-HTML-sajt-Kak-sdelat-formu-registracii-s-sohraneniem-vvedennyh-dannyh"><IMG height=45 alt="Гостевая книга(пока нет -не проходили)"
+            src="https://cdn.icon-icons.com/icons2/171/PNG/512/settings_23358.png" width=45 align=left border=0></A></div2>
+<div3><A href="https://javascript.ru/forum/misc/43178-registraciya-na-sajjte.html"><IMG height=45 alt="Гостевая книга(пока нет -не проходили)"
+            src="https://cdn.icon-icons.com/icons2/171/PNG/512/settings_23358.png" width=45 align=left border=0></A></div3>
+<div4><A href="http://html.find-info.ru/html/004/main-template.htm"><IMG height=45 alt="Гостевая книга(пока нет -не проходили)"
+            src="https://cdn.icon-icons.com/icons2/171/PNG/512/settings_23358.png" width=45 align=left border=0></A>

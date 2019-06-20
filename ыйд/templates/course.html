@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{{ url_for('ShowTasks') }}">
+  <div class="container signin">
+    <p><button type="submit">Tasks</button></p>
+  </div>
+</form>
+<form action="{{ url_for('ShowTheory') }}">
+  <div class="container signin">
+    <p><button type="submit">Theory</button></p>
+  </div>
+</form>
+<form action="{{ url_for('AboutCourse') }}">
+  <div class="container signin">
+    <p><button type="submit">About</button></p>
+  </div>
+</form>
+</body>
+</html>

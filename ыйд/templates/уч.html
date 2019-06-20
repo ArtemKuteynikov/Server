@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div2, #div3, #div4, #div5, #div6 {
+  float: left;
+  max-width: 100px;
+  min-width: 100px;
+  max-height: 70px;
+  min-height: 35px;
+  margin: 10px;
+  padding: 0 auto;
+  border: 3px solid black;
+}
+#div1 {
+  float: left;
+  width: 100px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid black;
+}
+#flip {
+ position: absolute;
+ top: 50%
+  text-align: center;
+  background-color: #64A8D1;
+  border: solid 1px #000;
+}
+</style>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h2>Drag and Drop</h2>
+<p>Drag the image back and forth between the two div elements.</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div draggable="true" ondragstart="drag(event)" id="drag2" width="90" height="15" padding = "0"><img><h>Block - diagrams1.com</h></img></div>
+  <div draggable="true" ondragstart="drag(event)" id="drag3" width="90" height="15" padding = "0"><h>Block - diagrams2.com</h></div>
+    <div draggable="true" ondragstart="drag(event)" id="drag4" width="90" height="15" padding = "0"><h>Block - diagrams3.com</h></div>
+    <div draggable="true" ondragstart="drag(event)" id="drag5" width="90" height="15" padding = "0"><h>Block - diagrams4.com</h></div>
+    <div draggable="true" ondragstart="drag(event)" id="drag6" width="90" height="15" padding = "0"><h>Block - diagrams5.com</h></div>
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<script>
+
+var dragged = null;
+function allowDrop(ev) {
+ev.preventDefault();
+}
+
+
+
+function drag(ev) {
+ev.dataTransfer.setData("text", ev.target.id);
+dragged = ev.target;
+}
+
+
+function drop(ev) {
+ev.preventDefault();
+var data = ev.dataTransfer.getData("text");
+ev.target.appendChild(document.getElementById(data));
+dragged = null;
+}
+
+function Check(){
+var a = 0
+var colour1 = document.getElementById("div2");
+var colour2 = document.getElementById("div3");
+var colour3 = document.getElementById("div4");
+var colour4 = document.getElementById("div5");
+var colour5 = document.getElementById("div6");
+var drag = $("div2").find("span")
+$( "#div2 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag2'){
+colour1.style.backgroundColor = "#0f0"
+a++
+}
+else{
+colour1.style.backgroundColor = "#f00"
+}});
+$( "#div3 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag3'){
+colour2.style.backgroundColor = "#0f0"
+a++
+}
+else{
+colour2.style.backgroundColor = "#f00"
+}});
+
+$( "#div4 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag4'){
+colour3.style.backgroundColor = "#0f0"
+a++
+}
+else{
+colour3.style.backgroundColor = "#f00"
+}});
+$( "#div5 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag5'){
+colour4.style.backgroundColor = "#0f0"
+a++
+}
+else{
+colour4.style.backgroundColor = "#f00"
+}});
+$( "#div6 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag6'){
+colour5.style.backgroundColor = "#0f0"
+a++
+}
+else{
+colour5.style.backgroundColor = "#f00"
+}});
+var b = 5*(a/5)
+alert(b)
+$.getJSON($SCRIPT_ROOT + '/addshare2', { post: b }, function(data) { var response = data.result; console.log(response); } );
+};
+</script>
+<input type="button" onclick="Check()" value="Считать кроликов!"/>
+</body>
+</html>

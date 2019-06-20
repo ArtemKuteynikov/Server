@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    margin: 0 auto;
+    padding: -2px;
+    background-color: white;
+}
+.container1 {
+    margin: 0 auto;
+    padding: 16px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}*/
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+        h{
+        color: #ff0000
+        }
+#post{
+  background-color: #3Df;
+    border: solid 1px #000;
+}
+#post1{
+  background-color: #3D9AD1;
+    border: solid 0px #000;
+}
+</style>
+</head>
+<body>
+
+<form action="{{ url_for('ConTS1') }}" method="post">
+
+    {% for post in posts %}
+    <div class="container", id = 'post' ,style = "opacity: 0.5; height: 10%; width: 100px;">
+    <h3>{{post.author.nickname}}</h3></div>
+    <div class="container1", id = 'post1' ,style ="opacity: 0.5; height: 50%; width: 100px; display: block;">
+        <p><b>{{post.body}}</b></p>  </div>
+    {% endfor %}
+
+      <h>
+    {{error}}
+</h>
+    <hr>
+
+    <label for="email"><b>Your message:</b></label>
+    <p>
+    <textarea type="text" placeholder="Write something here" name="projectFilepath2" required></textarea>
+    </p>
+
+    <button type="submit">Send</button>
+
+
+</form>
+      <form action="{{ url_for('MyPage') }}">
+    <p><button type="submit">Home</button></p>
+</form>
+</body>
+</html>

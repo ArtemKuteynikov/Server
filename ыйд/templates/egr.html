@@ -1,0 +1,19 @@
+<!-- 1. Подключите библиотеку (jQuery не требуется) -->
+<script src="https://github.com/Verhov/arrows_for_blocks/blob/master/arrows.1.0.0.js"></script>
+
+<!-- 2. Создайте html разметку -->
+<ul id="ex1-common-parent">
+  <li class="central-icon"><i>1</i></li>
+  <li class="icon"><i>2</i></li>
+  <li class="icon"><i>3</i></li>
+  <li class="icon"><i>4</i></li>
+</ul>
+
+
+<script type='text/javascript'>
+  // 3. Определим «общего родителя», на котором будут рисоваться стрелки (создаваться холст – canvas)
+  var arrowsDrawer1 = $cArrows('#ex1-common-parent');
+
+  // 4. Рисуем стрелки .arrow(from, to)
+  arrowsDrawer1.arrow('.central-icon', '.icon');
+</script>

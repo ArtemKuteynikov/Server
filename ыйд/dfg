@@ -1,0 +1,42 @@
+var dragged = null;
+function allowDrop(ev) {
+ev.preventDefault();
+}
+
+
+function drag(ev) {
+ev.dataTransfer.setData("text", ev.target.id);
+dragged = ev.target;
+}
+
+
+function drop(ev) {
+ev.preventDefault();
+var data = ev.dataTransfer.getData("text");
+ev.target.appendChild(document.getElementById(data));
+dragged = null;
+}
+
+function Check{
+$(h).click(function(){
+var colour1 = document.getElementById("div2");
+var colour2 = document.getElementById("div3");
+var drag = $("div2").find("span")
+$( "#div2 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag2'){
+colour1.style.backgroundColor = "#0f0"
+}
+else{
+colour1.style.backgroundColor = "#f00"
+}});
+$( "#div3 div").each( function( index, element) {
+   drag = $( element).attr("id");
+
+if (drag == 'drag3'){
+colour2.style.backgroundColor = "#0f0"
+}
+else{
+colour2.style.backgroundColor = "#f00"
+}});})}

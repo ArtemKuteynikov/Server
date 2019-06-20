@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Your profile info successfully changed. Go to profile info:
+      <form action="{{ url_for('Show_info') }}">
+  <div class="container signin">
+    <p><button type="submit">Profile</button>.</p>
+  </div>
+</form>
+
+      <form action="{{ url_for('MyPage') }}">
+  <div class="container signin">
+    <p><button type="submit">Home</button></p>
+  </div>
+</form>
+</body>
+</html>
